@@ -1,0 +1,85 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body ul {
+  list-style-type: none;
+}
+
+body ul li {
+  cursor: pointer;
+}
+
+#navigation {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#navigation h1 {
+  text-align: left;
+  padding-left: 50px;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+#navigation ul {
+  padding: 40px;
+}
+
+#navigation li {
+  padding: 9px;
+  text-align: left;
+  color: black;
+  border: 1px solid black;
+}
+
+.flex-buttons {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  margin: 20px;
+}
+
+.flex-buttons li {
+  padding: 10px;
+  border: 1px solid;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.timer-container {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.timer-control ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin: 20px;
+}
+
+.timer-control ul li {
+  padding: 15px;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=index.css.map */
