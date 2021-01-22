@@ -1,14 +1,10 @@
-let number = document.getElementById('text');
 
+const timerButtons = document.getElementById('timer-control');
 const button = document.getElementById('button');
 
-
-
-
-function startTimer(duration, display) {
+let startTimer = (duration,display) => {
     let timer = duration, minutes, seconds;
-    setInterval(function () {
-    if(!number.classList.contains('pauseInterval')){
+    setInterval(() => {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -20,27 +16,25 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-    } else {
-        console.log('nothing')
-        
-
-    }
+   
 
     }, 1000);
 }
 
+timerButtons.addEventListener('click', (event) => {
+    let number = document.getElementById('text');
 
-button.addEventListener('click',function(){
+    if(event.target.className === 'start'){
+        let time = 60* 25;
+         startTimer(time,number);
+    }
 
-    let time = 60 * 25 
-    // the amount off time corresponding to the display variable
-    let display = number
-    
-    // the text variable in the html side off the project
-    startTimer(time,display)    
+    if(event.target.className === 'stop'){
+        console.log('stop')
+    }
+    if(event.target.className === 'reset'){
+        console.log('reset')
+    }
+
 })
 
-const stop = document.getElementById('stop')
-
-stop.addEventListener('click',() => number.classList.toggle('pauseInterval'))
-//doesnt technically 'stop' the timer, rather it keeps running in the background, it just doesn't increment the value
