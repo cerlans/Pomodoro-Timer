@@ -1,20 +1,27 @@
 
 const timerButtons = document.getElementById('timer-control');
-const button = document.getElementById('button');
+let number = document.getElementById('text');
+
 
 let startTimer = (duration,display) => {
     let timer = duration, minutes, seconds;
     setInterval(() => {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
+          if(!number.classList.contains('pauseInterval')){
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timer < 0) {
+                timer = duration;
+            }
+        } else {
+            console.log('nothing')
+            
+    
         }
    
 
@@ -30,7 +37,8 @@ timerButtons.addEventListener('click', (event) => {
     }
 
     if(event.target.className === 'stop'){
-        console.log('stop')
+        number.classList.toggle('pauseInterval')
+
     }
     if(event.target.className === 'reset'){
         console.log('reset')
