@@ -29,7 +29,6 @@ let startTimer = (duration,display) => {
 }
 
 timerButtons.addEventListener('click', (event) => {
-    let number = document.getElementById('text');
 
     if(event.target.className === 'start'){
         let time = 60* 25;
