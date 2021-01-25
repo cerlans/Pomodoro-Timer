@@ -1,5 +1,9 @@
 
+'use strict';
+
 const timerButtons = document.getElementById('timer-control');
+const breakButtons = document.getElementById('break-buttons');
+
 let number = document.getElementById('text');
 
 
@@ -28,6 +32,13 @@ let startTimer = (duration,display) => {
     }, 1000);
 }
 
+function reset(){
+    let highestTimeoutId = setTimeout(";");
+    for (let i = 0 ; i < highestTimeoutId ; i++) {
+    clearTimeout(i); 
+}
+    
+}
 timerButtons.addEventListener('click', (event) => {
 
     if(event.target.className === 'start'){
