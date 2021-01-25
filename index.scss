@@ -39,7 +39,7 @@ body {
         }
 }
 
-.flex-buttons {
+#break-buttons {
     margin-top:40px;
     display:flex;
     text-align:center;
@@ -49,8 +49,15 @@ body {
             padding:10px;
             border:1px solid;
             flex:1;
+            background: #2ba6cb;
+            color:white;
+        }
+        li:hover{
+            transition: 0.3s;
+            background:#268ead
         }
 }
+
 
 .timer-container {
     text-align:center;
@@ -60,7 +67,7 @@ body {
 }
 
 
-.timer-control {
+#timer-control {
 
 
     ul {
