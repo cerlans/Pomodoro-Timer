@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 * {
     box-sizing:border-box;
     padding:0px;
     margin:0px;
     font-family: 'Roboto', sans-serif;
-
 }
 
 body {
@@ -21,7 +19,6 @@ body {
 }
 
 #navigation {
-    border:1px solid red;
     display:flex;
     flex-direction:column;
 
@@ -38,9 +35,15 @@ body {
         li {
             padding:9px;
             text-align:left;
-             color:black;
-             border:1px solid black;
+            background: #2ba6cb;
+            color:white;
+            border:1px solid white;
         }
+        li:hover{
+            background:#268ead
+
+        }
+       
 }
 
 #break-buttons {
@@ -62,7 +65,6 @@ body {
         }
 }
 
-
 .timer-container {
     text-align:center;
   font-size:40px;
@@ -82,12 +84,19 @@ body {
 
         li {
             padding:15px;
-            border:1px solid black; 
+            background: #2ba6cb;
+            border:1px solid white;
+            color:white;
+
+        }
+        li:hover{
+            background:#268ead
+
         }
     }
     
 }
 
 .pauseInterval {
-    
+
 }
