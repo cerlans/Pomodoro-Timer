@@ -40,6 +40,23 @@ function reset(){
 }
     
 }
+
+breakButtons.addEventListener('click', (event)=> {
+    if(event.target.className === 'short'){
+        reset()
+        number.innerText = '05:00';
+        let time = 60 * 5;
+        startTimer(time,number)
+    }
+    if (event.target.className ==='long') {
+        reset()
+        number.innerText = '10:00';
+        let time = 60 * 10;
+        startTimer(time,number)
+    } 
+})
+
+
 timerButtons.addEventListener('click', (event) => {
 
     if(event.target.className === 'start'){
