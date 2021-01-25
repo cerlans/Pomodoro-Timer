@@ -76,24 +76,18 @@ body {
 #timer-control {
 
 
-    ul {
+    div {
         display:flex;
         flex-direction:column;
         text-align:center;
         margin:20px;
 
-        li {
-            padding:15px;
-            background: #2ba6cb;
-            border:1px solid white;
-            color:white;
-
-        }
-        li:hover{
-            background:#268ead
-
+        button {
+          padding:20px;
         }
     }
+
+   
     
 }
 
