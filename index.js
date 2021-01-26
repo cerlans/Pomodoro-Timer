@@ -4,7 +4,11 @@
 const timerButtons = document.getElementById('timer-control');
 const breakButtons = document.getElementById('break-buttons');
 
-let number = document.getElementById('text');
+// startbutton controls the timer starting or not
+const startButton = document.getElementsByClassName('start')[0];
+
+// the 'clock' number that ticks down
+let number = document.getElementById('text')
 // this number is an h1 with the default value off '25:00', it is the target for the stopwatch functionality
 
 let startTimer = (duration,display) => {
@@ -20,7 +24,8 @@ let startTimer = (duration,display) => {
             display.textContent = minutes + ":" + seconds;
     
             if (--timer < 0) {
-                timer = duration;
+                reset();
+                number.textContent = '0:00';
             }
         } else {
             console.log('nothing')
