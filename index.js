@@ -50,30 +50,17 @@ function reset(){
     clearTimeout(i); 
 }
 number.innerText = textTime;
-startButton.disabled = 'false';   
+startButton.disabled = false;   
 }
 
-breakButtons.addEventListener('click', (event)=> {
-    if(event.target.className === 'short'){
-        reset()
-        number.innerText = '05:00';
-        let time = 60 * 5;
-        startTimer(time,number)
-    }
-    if (event.target.className ==='long') {
-        reset()
-        number.innerText = '10:00';
-        let time = 60 * 10;
-        startTimer(time,number)
-    } 
-})
 
 
 timerButtons.addEventListener('click', (event) => {
 
     if(event.target.className === 'start'){
         let time = 60 * parseInt(number.innerText);
-         startTimer(time,number);
+        startButton.disabled = true;
+        startTimer(time,number);
     }
 
     if(event.target.className === 'stop'){
@@ -81,9 +68,35 @@ timerButtons.addEventListener('click', (event) => {
     }
     
     if(event.target.className === 'reset'){
-        console.log('reset')
         reset()
     }
 
 })
+
+breakButtons.addEventListener('click', (event)=> {
+    
+    if(event.target.className === 'pomodoro'){
+        reset()
+        number.innerText = '25:00';
+        textTime = '25:00';
+        let time = 60 * parseInt(number.innerText);
+        startTimer(time,number);
+    }
+    
+    if(event.target.className === 'short'){
+        reset()
+        number.innerText = '25:00';
+        textTime = '25:00';
+        let time = 60 * parseInt(number.innerText);
+        startTimer(time,number);
+    }
+    if (event.target.className ==='long') {
+        reset()
+        textTime = '10:00';
+        number.innerText = '10:00';
+        let time = 60 * parseInt(number.innerText);
+        startTimer(time,number)
+    } 
+})
+
 
