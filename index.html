@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <nav id="navigation">
-        <h1>Tomato Timer</h1>
-    <ul>
-        <li>Log</li>
-        <li>FAQ</li>
-        <li>Settings</li>
-        <li>Tweet about us!</li>
-    </ul> 
-        
-        <!-- modal background-->
-    <div id="myModal" class="modal">
-
-        <!-- content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
-        </div>
-      
-      </div>
-    </nav>
-
-    <section id="timer-content">
-        <ul id='break-buttons'>
-          <li>Pomodoro</li>
-          <li class='short'>Short Break</li>
-          <li class='long'>Long Break</li>
-        </ul>
-
-        <div class="timer-container">
-            <div id="timer">
-                <h1 id='text'>25:00</h1>
-            </div>  
-        </div>
-
-        <div id='timer-control'>
-            <div>
-              <button type='button' class='start'>Start</button>
-              <button type='button' class='stop'>Stop</button>
-              <button type='button' class='reset'>Reset</button>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pomodoro Timer</title>
+      <link rel="stylesheet" href="index.css">
+   </head>
+   <body>
+      <nav id="navigation">
+         <h1>Tomato Timer</h1>
+         <ul>
+            <li>Log</li>
+            <li>FAQ</li>
+            <li>Settings</li>
+            <li>Tweet about us!</li>
+         </ul>
+         <!-- modal background-->
+         <div id="myModal" class="modal">
+            <!-- content -->
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <p>Some text in the Modal..</p>
             </div>
-          </div>
-    </section>
-
-    <script src="index.js" defer></script>
-</body>
+         </div>
+      </nav>
+      <section id="timer-content">
+         <ul id='break-buttons'>
+            <li class='pomodoro'>Pomodoro</li>
+            <li class='short'>Short Break</li>
+            <li class='long'>Long Break</li>
+         </ul>
+         <div class="timer-container">
+            <div id="timer">
+               <h1 id='text'>25:00</h1>
+            </div>
+         </div>
+         <div id='timer-control'>
+            <div>
+               <button type='button' class='start'>Start</button>
+               <button type='button' class='stop'>Stop</button>
+               <button type='button' class='reset'>Reset</button>
+            </div>
+         </div>
+      </section>
+   </body>
 </html>
+
+
