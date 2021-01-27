@@ -16,13 +16,40 @@
             <li>Tweet about us!</li>
          </ul>
          <!-- modal background-->
-         <div id="myModal" class="modal">
-            <!-- content -->
-            <div class="modal-content">
-               <span class="close">&times;</span>
-               <p>Some text in the Modal..</p>
-            </div>
-         </div>
+         <div id="modal" class="modal" style="display:none">
+
+      <!-- content -->
+      <div class="modal-content">
+        <div class="header">
+            <h2>Options</h2>
+            <h3>User Preferences</h3>
+            <p>
+              <input type="checkbox"><label>Timer indication in title?</label>
+            </p>
+            <p>
+              <input type="checkbox"><label>Timer indication in title?</label>
+            </p>
+            <p>
+              <input type="checkbox"><label>Timer indication in title?</label>
+            </p>
+        </div>
+        <div class="options">
+          <h2>Select Sound</h2>
+          <h2>Select Volume</h2>
+          <h2>Set cutsom Times</h2>
+          <p>You can set your custom workflow here!</p>
+        <div class="flex-options">
+          <label for="pomodoro">Pomodoro</label>
+          <input type="number" id='pomodoro'>
+          <label for="short-Break">Short Break</label>
+          <input type="number" id="short-Break">
+          <label for="long-Break">Long Break</label>
+          <input type="number" id="long-Break">
+        </div>
+        </div>
+      </div>
+    
+    </div>
       </nav>
       <section id="timer-content">
          <ul id='break-buttons'>
