@@ -1,12 +1,10 @@
 
 'use strict';
-
 const timerButtons = document.getElementById('timer-control');
 const breakButtons = document.getElementById('break-buttons');
-
-// startbutton controls the timer starting or not
+// startbutton for the button 'start' in the html
 const startButton = document.getElementsByClassName('start')[0];
-
+const settings = document.getElementById('settings');
 // the 'clock' number that ticks down
 let number = document.getElementById('text')
 // this number is an h1 with the default value off '25:00', it is the main target for the stopwatch functionality
@@ -99,4 +97,14 @@ breakButtons.addEventListener('click', (event)=> {
     } 
 })
 
+settings.addEventListener('click',() => {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    // is this bad practice?
+    window.onclick = function(event) {
+        if(event.target.className === 'modal') {
+            event.target.style.display = 'none';
+        }
+    }
+})
 
