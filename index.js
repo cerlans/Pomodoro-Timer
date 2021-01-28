@@ -1,23 +1,22 @@
-
 'use strict';
 const timerButtons = document.getElementById('timer-control');
 const breakButtons = document.getElementById('break-buttons');
-// startbutton for the button 'start' in the html
 const startButton = document.getElementsByClassName('start')[0];
 const settings = document.getElementById('settings');
-// the 'clock' number that ticks down
-let number = document.getElementById('text')
-// this number is an h1 with the default value off '25:00', it is the main target for the stopwatch functionality
-
 
 let textTime = '25:00'
-// this variable is a mutable string, the base string value will be mutated to another string value in accordance 
-// to the option the user has selected IE: if user clicks short break, it will be a string that reads '5:00'
-// it also acts as a reference when the timer is reset, setting the textContent off the number variable to the corresponding break length selected.
+
+
 let startTimer = (duration,display) => {
     let timer = duration, minutes, seconds;
+    // the alarm sound effect
+    const alarm = document.createElement('audio');
+    const source = document.createElement('source');
+    source.src = 'https://onlineclock.net/audio/options/default.mp3'
+    alarm.append(source);
+    
     setInterval(() => {
-          if(!number.classList.contains('pauseInterval')){
+          if(!display.classList.contains('pauseInterval')){
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
     
@@ -25,33 +24,30 @@ let startTimer = (duration,display) => {
             seconds = seconds < 10 ? "0" + seconds : seconds;
     
             display.textContent = minutes + ":" + seconds;
-    
             if (--timer < 0) {
-                reset();
-                // will end the interval when it reaches 0
-                number.textContent = '0:00';
+                reset()
+                display.textContent = '0:00'
+                console.log('ring ring ring ring')
+                alarm.play()
             }
+            
         } else {
             console.log('nothing')
-            
-    
         }
    
 
     }, 1000);
 }
-
-//resets the timer value, clears the Interval
-function reset(){
+// kills all setIntervals, regardless of ID
+function reset(param){
     let highestTimeoutId = setTimeout(";");
     for (let i = 0 ; i < highestTimeoutId ; i++) {
     clearTimeout(i); 
 }
-number.innerText = textTime;
-startButton.disabled = false;   
+const text = document.getElementById('text');
+text.textContent = param
+startButton.disabled = false;
 }
-
-
 
 timerButtons.addEventListener('click', (event) => {
 
@@ -62,38 +58,47 @@ timerButtons.addEventListener('click', (event) => {
     }
 
     if(event.target.className === 'stop'){
+        
         number.classList.toggle('pauseInterval')
+
     }
-    
+
     if(event.target.className === 'reset'){
-        reset()
+     reset(textTime)
     }
 
 })
 
+
 breakButtons.addEventListener('click', (event)=> {
-    
-    if(event.target.className === 'pomodoro'){
+ 
+    if(event.target.className === 'pomodoro') {
         reset()
-        number.innerText = '25:00';
-        textTime = '25:00';
-        let time = 60 * parseInt(number.innerText);
-        startTimer(time,number);
+        const pomodoro = document.getElementById('Pomodoro');
+        const display = document.getElementById('text');
+        display.textContent =  `${pomodoro.valueAsNumber}:00`
+        textTime = `${pomodoro.valueAsNumber}:00`
+        let time = 60 * pomodoro.valueAsNumber;
+        startTimer(time,display);
     }
-    
+
     if(event.target.className === 'short'){
         reset()
-        number.innerText = '25:00';
-        textTime = '25:00';
-        let time = 60 * parseInt(number.innerText);
-        startTimer(time,number);
+        const short = document.getElementById('Short-Break')
+        const display = document.getElementById('text');
+        display.textContent =  `${short.valueAsNumber}:00`
+        textTime = `${short.valueAsNumber}:00`
+        let time = 60 * short.valueAsNumber;
+        startTimer(time,display);
     }
     if (event.target.className ==='long') {
         reset()
-        textTime = '10:00';
-        number.innerText = '10:00';
-        let time = 60 * parseInt(number.innerText);
-        startTimer(time,number)
+        const long = document.getElementById('Long-Break')
+        const display = document.getElementById('text');
+        display.textContent =  `${long.valueAsNumber}:00`
+        textTime = `${long.valueAsNumber}:00`
+        let time = 60 * long.valueAsNumber;
+        startTimer(time,display)
     } 
 })
 
@@ -107,4 +112,7 @@ settings.addEventListener('click',() => {
         }
     }
 })
+
+const test = document.getElementById('short-Break');
+const master = document.getElementsByClassName('flex-options')[0];
 
