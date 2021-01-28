@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -5,6 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Pomodoro Timer</title>
       <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
    </head>
    <body>
       <nav id="navigation">
@@ -12,44 +15,34 @@
          <ul>
             <li>Log</li>
             <li>FAQ</li>
-            <li>Settings</li>
+            <li id ='settings'>Settings</li>
             <li>Tweet about us!</li>
          </ul>
-         <!-- modal background-->
          <div id="modal" class="modal" style="display:none">
-
-      <!-- content -->
-      <div class="modal-content">
-        <div class="header">
-            <h2>Options</h2>
-            <h3>User Preferences</h3>
-            <p>
-              <input type="checkbox"><label>Timer indication in title?</label>
-            </p>
-            <p>
-              <input type="checkbox"><label>Timer indication in title?</label>
-            </p>
-            <p>
-              <input type="checkbox"><label>Timer indication in title?</label>
-            </p>
-        </div>
-        <div class="options">
-          <h2>Select Sound</h2>
-          <h2>Select Volume</h2>
-          <h2>Set cutsom Times</h2>
-          <p>You can set your custom workflow here!</p>
-        <div class="flex-options">
-          <label for="pomodoro">Pomodoro</label>
-          <input type="number" id='pomodoro'>
-          <label for="short-Break">Short Break</label>
-          <input type="number" id="short-Break">
-          <label for="long-Break">Long Break</label>
-          <input type="number" id="long-Break">
-        </div>
-        </div>
-      </div>
-    
-    </div>
+            <!-- content -->
+            <div class="modal-content">
+               <div class="header">
+                  <h1>Timer Settings</h1>
+                  <i class="fas fa-times"></i>
+               </div>
+               <div class="time-inputs">
+                  <h3 style="margin-left:5px"> Time (minutes)</h3>
+                  <div class="flex-options">
+                     <div><input type="number"></div>
+                     <div><input type="number"></div>
+                     <div><input type="number"></div>
+                  </div>
+               </div>
+               <div class="sound">
+                  <h3>Alert Volume</h3>
+                  <input type="range">
+               </div>
+               <div class="autostart">
+                  <h3>Auto start next Round?</h3>
+                  <button>Press here</button>
+               </div>
+            </div>
+         </div>
       </nav>
       <section id="timer-content">
          <ul id='break-buttons'>
@@ -70,7 +63,11 @@
             </div>
          </div>
       </section>
+      <section class="settings">
+         <h1>Settings</h1>
+         <p>You can set custom times, audio tone and volume via Settings button.</p>
+      </section>
+      <script src="index.js"></script>
    </body>
 </html>
-
 
