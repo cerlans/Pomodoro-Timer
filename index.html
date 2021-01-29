@@ -13,7 +13,6 @@
       <nav id="navigation">
          <h1>Tomato Timer</h1>
          <ul>
-            <li>Log</li>
             <li>FAQ</li>
             <li id ='settings'>Settings</li>
             <li>Tweet about us!</li>
@@ -30,15 +29,15 @@
                   <div class="flex-options">
                      <div>
                         <label for="Pomodoro">Pomodoro</label>
-                        <input type="number" value="25" name="Pomodoro">
+                        <input type="number" value="25" id="Pomodoro" name="Pomodoro">
                      </div>
                      <div>
                         <label for="Short-Break">Short-Break</label>
-                        <input type="number" value="5" name="Short-Break">
+                        <input type="number" value="5" id="Short-Break" name="Short-Break">
                      </div>
                      <div>
                         <label for="Long-Break">Long-Break</label>
-                        <input type="number" value="10" name="Long-Break">
+                        <input type="number" value="10" id="Long-Break" name="Long-Break">
                      </div>
                   </div>
                </div>
@@ -61,7 +60,7 @@
          </ul>
          <div class="timer-container">
             <div id="timer">
-               <h1 id='text'>25:00</h1>
+               <h1 id='text'></h1>
             </div>
          </div>
          <div id='timer-control'>
@@ -79,4 +78,5 @@
       <script src="index.js"></script>
    </body>
 </html>
+
 
