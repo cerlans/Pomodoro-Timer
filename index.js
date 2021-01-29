@@ -3,9 +3,10 @@ const timerButtons = document.getElementById('timer-control');
 const breakButtons = document.getElementById('break-buttons');
 const startButton = document.getElementsByClassName('start')[0];
 const settings = document.getElementById('settings');
+const tv = document.getElementById('text');
 
-let textTime = '25:00'
-
+let startTracker;
+let textTime;
 
 let startTimer = (duration,display) => {
     let timer = duration, minutes, seconds;
@@ -52,9 +53,9 @@ startButton.disabled = false;
 timerButtons.addEventListener('click', (event) => {
 
     if(event.target.className === 'start'){
-        let time = 60 * parseInt(number.innerText);
-        startButton.disabled = true;
-        startTimer(time,number);
+    
+        startTimer(startTracker,startTracker);
+        // the startTracker variable tracks where the timer is corresponding to the option selected
     }
 
     if(event.target.className === 'stop'){
@@ -76,8 +77,9 @@ breakButtons.addEventListener('click', (event)=> {
         reset()
         const pomodoro = document.getElementById('Pomodoro');
         const display = document.getElementById('text');
-        display.textContent =  `${pomodoro.valueAsNumber}:00`
-        textTime = `${pomodoro.valueAsNumber}:00`
+        display.textContent =  `${pomodoro.valueAsNumber}:00`;
+        startTracker = 60 * pomodoro.valueAsNumber;
+        textTime = `${pomodoro.valueAsNumber}:00`;
         let time = 60 * pomodoro.valueAsNumber;
         startTimer(time,display);
     }
@@ -87,6 +89,7 @@ breakButtons.addEventListener('click', (event)=> {
         const short = document.getElementById('Short-Break')
         const display = document.getElementById('text');
         display.textContent =  `${short.valueAsNumber}:00`
+        startTracker = 60 * short.valueAsNumber;
         textTime = `${short.valueAsNumber}:00`
         let time = 60 * short.valueAsNumber;
         startTimer(time,display);
@@ -95,8 +98,9 @@ breakButtons.addEventListener('click', (event)=> {
         reset()
         const long = document.getElementById('Long-Break')
         const display = document.getElementById('text');
-        display.textContent =  `${long.valueAsNumber}:00`
-        textTime = `${long.valueAsNumber}:00`
+        display.textContent =  `${long.valueAsNumber}:00`;
+        startTracker = 60 * long.valueAsNumber;
+        textTime = `${long.valueAsNumber}:00`;
         let time = 60 * long.valueAsNumber;
         startTimer(time,display)
     } 
